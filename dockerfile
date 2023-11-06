@@ -19,11 +19,6 @@ RUN apt-get update && apt-get install -y python3-setuptools
 RUN apt-get update && apt-get install -y python3-pip && pip3 --version
 RUN apt-get update && apt-get install -y openssh-server
 
-#改密码
-
-
-
-
 
 RUN python3 -m pip install --upgrade pip && pip3 --version
 RUN pip3 install torch && pip3 install pandas && pip3 install torchvision
@@ -60,21 +55,6 @@ RUN go version
 #ENV CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 #ENV PATH=${JAVA_HOME}/bin:$PATH
 #RUN java -version
-
-
-#hadoop
-#实际执行路径/usr/local/hadoop/bin/hadoop
-#COPY hadoop-3.1.3.tar.gz /
-#RUN tar -zxf hadoop-3.1.3.tar.gz -C /usr/local  \
-#	&& mv /usr/local/hadoop-3.1.3/ /usr/local/hadoop
-#	&& chown -R chaincode:chaincode /usr/local/hadoop
-#RUN cd /usr/local/hadoop && ./bin/hadoop version
-
-
-
-
-
-
 
 COPY /payload/ML /ML/
 COPY /payload/data /data/
